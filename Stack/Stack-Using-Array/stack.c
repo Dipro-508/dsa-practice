@@ -6,22 +6,18 @@ int x;
 if(t==M-1){printf("Overflow\n");return;}
 printf("Value: ");
 scanf("%d",&x);
-s[++t]=x;
-}
+s[++t]=x;}
 void pop(){
 if(t==-1){printf("Underflow\n");return;}
-printf("Deleted:%d\n",s[t--]);
-}
+printf("Deleted:%d\n",s[t--]);}
 void peek(){
 if(t==-1){printf("Empty\n");return;}
-printf("Top:%d\n",s[t]);
-}
+printf("Top:%d\n",s[t]);}
 void display(){
 int i;
 if(t==-1){printf("Empty\n");return;}
 for(i=t;i>=0;i--)printf("%d ",s[i]);
-printf("\n");
-}
+printf("\n");}
 int main(){
 int c;
 while(1){
@@ -32,7 +28,5 @@ else if(c==2)pop();
 else if(c==3)peek();
 else if(c==4)display();
 else if(c==5)break;
-else printf("Wrong Choice\n");
-}
-return 0;
-}
+else printf("Wrong Choice\n");}
+return 0;}
