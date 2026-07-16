@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+// Node
 struct n{
     int d;
     struct n *l,*r;
 };
 
+// Create Node
 struct n*nn(int x){
     struct n*p=malloc(sizeof(struct n));
     p->d=x;
@@ -13,6 +15,7 @@ struct n*nn(int x){
     return p;
 }
 
+// BST Insert
 struct n*ins(struct n*t,int x){
     if(t==NULL)return nn(x);
     if(x<t->d)t->l=ins(t->l,x);
@@ -20,6 +23,7 @@ struct n*ins(struct n*t,int x){
     return t;
 }
 
+// Inorder
 void in(struct n*t){
     if(t){
         in(t->l);
@@ -28,22 +32,26 @@ void in(struct n*t){
     }
 }
 
+// Searching
 struct n*sea(struct n*t,int x){
     if(t==NULL||t->d==x)return t;
     if(x<t->d)return sea(t->l,x);
     return sea(t->r,x);
 }
 
+// Minimum
 struct n*mn(struct n*t){
     while(t->l)t=t->l;
     return t;
 }
 
+// Maximum
 struct n*mx(struct n*t){
     while(t->r)t=t->r;
     return t;
 }
 
+// Deletion
 struct n*del(struct n*t,int x){
 
     if(t==NULL)return t;
